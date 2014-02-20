@@ -1,0 +1,15 @@
+session_id,identifier
+updatePassword,categorical
+updatePaymentInfo,categorical
+verifiedPassword,categorical
+reviewedQueue,categorical
+kid,categorical
+session_duration
+num_plays
+num_browsed
+num_hovered
+num_queued
+num_recommendations
+num_rated
+num_reviewed
+num_searched
