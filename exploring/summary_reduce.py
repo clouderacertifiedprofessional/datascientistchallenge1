@@ -39,7 +39,7 @@ for line in sys.stdin:
    parts = line.strip().split('\t')
 
    if parts[0] != last:
-      # If there’s a previous key, print its summary
+      # If there's a previous key, print its summary
       if last != None:
          print_summary()
 
@@ -55,14 +55,14 @@ for line in sys.stdin:
       sum = 0
       count = 0
 
-   # Increment the number of times we’ve seen the field
+   # Increment the number of times we've seen the field
    count += 1
 
    # If there was a value of non-zero length, process it
    if len(parts) > 1 and len(parts[1]) > 0:
       is_heading = False
 
-      # If we think it’s a date, test if this value parses as a date
+      # If we think it's a date, test if this value parses as a date
       if is_date:
          if date_pattern.match(parts[1]):
             try:
@@ -75,19 +75,19 @@ for line in sys.stdin:
                if max == None or tstamp > max:
                   max = tstamp
             except (TypeError, ValueError):
-               # If it doesn’t parse, then assume it’s a number
+               # If it doesn't parse, then assume it's a number
                is_date = False
                is_number = True
                min = None
                max = None
          else:
-            # If it doesn’t match, then assume it’s a number
+            # If it doesn't match, then assume it's a number
             is_date = False
             is_number = True
             min = None
             max = None
             
-      # If we think it’s a number, test it this value parses as a number
+      # If we think it's a number, test it this value parses as a number
       if is_number:
          try:
             num = int(parts[1])
@@ -100,11 +100,11 @@ for line in sys.stdin:
             if max == None or num > max:
                max = num
          except ValueError:
-            # If not, assume it’s categorical
+            # If not, assume it's categorical
             is_number = False
             is_value = True
 
-      # If we think it’s categorical, and this value to the category set
+      # If we think it's categorical, and this value to the category set
       if is_value:
          values.add(parts[1])
 
