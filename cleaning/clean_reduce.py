@@ -9,7 +9,6 @@ def main():
    data = {}
 
    for line in sys.stdin:
-     try:
       key, value = line.strip().split('\t')
       userid, timestr, sessionid = key.split(',')
       flag, payload = value.split(':')
@@ -78,10 +77,6 @@ def main():
                  "actions": [], "kid": payload == "kid", "user": userid, "session": sessionid, "start": timestr}
 
       lastTime = timestr
-     except:
-      sys.stderr.write("%s\n" % line)
-      sys.stderr.flush()
-      raise
 
    data['end'] = lastTime
 
