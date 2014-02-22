@@ -22,7 +22,7 @@ def main():
 
             print json.dumps(data)
 
-            data = {"popular": [], "recommended": [], "searched": [], "hover": [], "queued": [], 
+         data = {"popular": [], "recommended": [], "searched": [], "hover": [], "queued": [], 
                  "browsed": [], "recommendations": [], "recent": [], "played": {}, "rated": {}, "reviewed": {}, 
                  "actions": [], "kid": kid, "user": userid, "session": sessionid, "start": timestr}
 
